@@ -10,10 +10,18 @@
                 <i class="icon ion-ionic"></i>
                 Temperature
             </h4>
+            <div class="button-bar">
+                <a class="button button-energized" ng-repeat="node in socket.getNodes()">{{node.id}}|{{node.temp}}</a>
+            </div>
+            <input type="text" ng-model="temperatureThreshold" ng-change="socket.changeTempThreshold(temperatureThreshold)" placeholder="First Name" ng-model-options='{ debounce: 2000 }'>
             <h4 class="border-top">
                 <i class="icon ion-ionic"></i>
                 Humidity
             </h4>
+            <div class="button-bar">
+                <a class="button button-energized" ng-repeat="node in socket.getNodes()">{{node.id}}|{{node.humi}}</a>
+            </div>
+            <input type="text" ng-model="humidityThreshold" ng-change="socket.changeHumidityThreshold(humidityThreshold)" placeholder="First Name" ng-model-options='{ debounce: 2000 }'>
         </div>
     </ion-content>
 </ion-view>

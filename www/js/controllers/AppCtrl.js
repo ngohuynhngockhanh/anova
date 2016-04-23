@@ -1,6 +1,15 @@
 ﻿app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout, AnovaSocket) {
+    $scope.temperatureThreshold = AnovaSocket.getTempThreshold();
+    $scope.humidityThreshold = AnovaSocket.getHumidityThreshold();
+    $scope.socket = AnovaSocket;
+    console.log($scope.temperatureThreshold);
+
+
+
     // Form data for the login modal
     $scope.loginData = {};
+
+
 
     var navIcons = document.getElementsByClassName('ion-navicon');
     for (var i = 0; i < navIcons.length; i++) {
